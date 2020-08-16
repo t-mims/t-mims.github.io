@@ -1,0 +1,62 @@
+body {
+    background-image: url(images/IMG_0814.jpeg) ;
+    font-family: 'Thasadith', sans-serif;
+    color: #444;
+}
+.navbar-brand {
+    font-family: 'Caveat', cursive;
+    font-size: xx-large;
+}    
+.container {
+    background-color: #404b3b;
+    margin-top: 50px;
+    margin-bottom: 50px;
+
+}
+.col-sm-3 {
+    font-size: large;
+    color: #404b3b;
+    flex-flow: column;
+    word-wrap: break-word;
+}
+
+#textbox {
+    padding-right: 0px;
+    padding-left: 0px;
+}
+
+#push_img {
+    margin-top: 112px;
+}
+
+.col-md-4 { 
+    color:#d3e4cb;
+    font-size: x-large;
+    font-family: 'Caveat', cursive;
+    margin-top: 200px;
+    padding-left: 50px;
+
+}
+
+#form {
+    padding: 20px;
+}
+
+.fa {
+    padding: 20px;
+    font-size: 30px;
+    width: 30px;
+    border-radius:50%;
+    text-align: center;
+    text-decoration: none;
+    color: #eff8ea;
+}
+
+footer{
+   background-color: #404b3b;
+   font-family: 'Caveat', cursive;
+}
+footer span {
+    text-align: center;
+    color: #eff8ea;
+}
