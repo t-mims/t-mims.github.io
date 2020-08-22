@@ -17,15 +17,15 @@ function definePassword(){
     if (incUpper===true){
       characters+= upper.split("");
     }
-    else if (incLower===true){
+    if (incLower===true){
       characters+= lower.split("");
 
     }
-    else if (incSpecial===true){
+    if (incSpecial===true){
       characters+= special.split("");
      
     }
-    else if (incNumber===true){
+    if (incNumber===true){
       characters+= number.split("");
     }
   }
@@ -40,11 +40,18 @@ word = ""
 function generatePassword(){
 
   for ( var i=0; i<length; i++){
-     word = word + characters[(Math.floor(Math.random() * characters.length))]
+     char= characters[(Math.floor(Math.random() * characters.length))]
+     if (char=== ","){
+      char= characters[(Math.floor(Math.random() * characters.length))]
+      return char
+     }
+     else {
+      word+=char
+     }
+    }
 
   console.log (word)
-    }
-  }
+}
 
 function writePassword() {
   var password = generatePassword();
