@@ -34,8 +34,10 @@ function definePassword(){
   }
   return characters
 }
+
 definePassword();
 word = "";
+
 function generatePassword(){
   for ( var i=0; i<length; i++){
      char= characters[(Math.floor(Math.random() * characters.length))];
