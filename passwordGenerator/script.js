@@ -11,8 +11,12 @@ let incLower= confirm("Would you like to include lower case letters?");
 let incSpecial= confirm("Would you like to include special characters?");
 let incNumber= confirm("Would you like to include numbers?");
 let length= prompt("How many characters would you like in the password? (enter number between 8 and 128");
+let lengthNum=parseInt(length)
 
 function definePassword(){
+  if (lengthNum>128 || lengthNum<8) {
+    length= prompt ("Please enter a number between 8 and 128.");
+  }
   if (8<=length<=128){
     if (incUpper===true){
       characters+= upper;
@@ -29,16 +33,13 @@ function definePassword(){
       characters+= number;
     }
   }
-  else {
-    length= prompt ("Please enter a number between 8 and 128.");
-  }
   return characters
 }
-
 definePassword();
-word = "";
 
+word = "";
 function generatePassword(){
+  
   for ( var i=0; i<length; i++){
      char= characters[(Math.floor(Math.random() * characters.length))];
      word= word.concat(char);
