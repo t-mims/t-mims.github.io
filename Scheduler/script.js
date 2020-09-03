@@ -8,5 +8,7 @@ let Hours= ["7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM ","1:0
 for (var i=0; i< Hours.length; i++){
     hourOf= $("<div class=row hour>");
     timeblocksDis.append(hourOf.text(Hours[i]));
+    hourOf.append($("<input class=time-block>"));
+    hourOf.append($("<button class=saveBtn>"))
 }
 
