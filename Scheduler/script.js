@@ -4,20 +4,19 @@ $("#currentDay").text("Today's date is " + dayOf);
 
 let currentTime = moment().format('LT');
 currentTime.split(":")
-console.log(currentTime);   
+ 
 //capturing necessary page elements to begin setting up timeblocks, inouts, and save button
 let timeblocksDis= $(".container");
 let todoList =[];
 let Hours= ["7:00 AM","8:00 AM","9:00 AM","10:00 AM","11:00 AM","12:00 PM ","1:00 PM","2:00 PM","3:00 PM","4:00 PM","5:00 PM","6:00 PM"];
-
+//function compares times **NEEDS to be fixed, time comparisons are off 
 function checkTimes(){
     if(currentTime[0] === Hours[i][0]){
         inputDis.addClass("present");
     }
-    if(currentTime[0] > Hours[i][0]){
+    if(currentTime[0] > Hours[i][0]){ 
         inputDis.addClass("past");
     }
-
     if(currentTime[0] < Hours[i][0]){
         inputDis.addClass("future");
     }
@@ -30,15 +29,17 @@ for (var i=0; i< Hours.length; i++){
     timeDis.addClass("hour col-md-1");
     inputDis=$("<input>");
     inputDis.addClass("col-md-10" );
-    inputDis.attr("dataIndex", i)
+    inputDis.attr("data-index", i);
     timeblocksDis.append(hourOf);
     hourOf.append((timeDis).text(Hours[i]));
     hourOf.append(inputDis);
     save=$("<button>SAVE</button>");
+    save.attr("data-index", i);
     save.addClass("saveBtn col-md-1");
     hourOf.append(save);
     todoList.push[inputDis.value];
     checkTimes(i);
+    
    
 };
 
@@ -48,14 +49,21 @@ function renderBlockText(){
         //something
        };
 };
-//need to capture the hour associated with each input?
-let whichHour= $(this).attr("dataIndex");
-console.log (whichHour)
+
+
 
 function captureInput(){
-    // localStorage.setItem("input",(JSON.stringify(Hours[whichHour].value)));
-    // todoList.push(toDo);
-    //  return todoList;
+    //event.preventDefault();
+    // let whichHour= $(this).attr("data-index");
+    
+    let inputVal= $(this).previousElementSibling;
+    
+    console.log (inputVal)
+    let toDo=JSON.stringify(inputVal)
+    // console.log(toDo)
+    // localStorage.setItem("input", toDo);
+    todoList.push(toDo);
+    return todoList;
 }
 //function that renders any previous input by pulling from local storage
 function renderInput(){
